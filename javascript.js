@@ -5,12 +5,16 @@ window.onload = function() {
 
 
 
-    const canvas = document.querySelctor('canvas'); // Generates the canvas upon loading up of the page
+    var canvas = document.getElementById('canvas'); // Generates the canvas upon loading up of the page
     function resizeCanvas() {
         //Some code to appropriately resize the canvas
     }
-    const context = canvas.getContext('2d');      //Allows us to draw shapes onto the canvas
+    var context = canvas.getContext("2d");      //Allows us to draw shapes onto the canvas
     
+    context.fillstyle = "#FF0000"
+    context.rect(50, 50, 75, 75);
+    context.fill();
+
     function makeHex() {    //Draw and enclose Hex
         context.moveTo(50, 50);
         context.lineTo(50, 75);
