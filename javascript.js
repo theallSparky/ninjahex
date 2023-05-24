@@ -10,7 +10,6 @@ window.onload = function() {
     //const startZone = c.strokeRect(10, 10, 90, 90);      // Creates the starting area
     //const endZone = c.strokeRect(650, 400, 100, 100);    // Creates the ending area
 
-
     function makeStartingZone() {
         c.beginPath();
         c.moveTo(10, 10);
@@ -22,6 +21,7 @@ window.onload = function() {
         c.fillStyle = "green"
         c.fill()
     }
+
     function makeEndZone() {
         c.beginPath();
         c.moveTo(650, 400)
@@ -33,6 +33,27 @@ window.onload = function() {
         c.fillStyle = "green"
         c.fill()
     }
+
+    function makeRedI() {
+        c.beginPath()
+        c.moveTo(450, 600)
+        c.lineTo(450, 550)        
+        c.lineTo(500, 550)        
+        c.lineTo(500, 350)        
+        c.lineTo(450, 350)        
+        c.lineTo(450, 300)        
+        c.lineTo(625, 300)        
+        c.lineTo(625, 350)        
+        c.lineTo(575, 350)        
+        c.lineTo(575, 550)
+        c.lineTo(625, 550)        
+        c.lineTo(625, 600)
+        c.lineTo(450, 600)        
+        c.fillStyle = "red"
+        c.stroke();
+        c.fill()
+    }
+
     function makePlayer() {             // Draw and enclose Hex
         let xAxis1 = 45
         let xAxis2 = 25
@@ -86,6 +107,37 @@ window.onload = function() {
                 c.stroke();
                 c.fill();            
                 //} else if (event.key === 'ArrowRight') {
+            }  else if (event.key === 'ArrowLeft') {
+                xAxis1-=5
+                xAxis2-=5
+                xAxis3-=5
+                xAxis4-=5
+                c.beginPath();
+                c.moveTo(xAxis1, yAxis1);
+                c.lineTo(xAxis2, yAxis2);
+                c.lineTo(xAxis1, yAxis3);
+                c.lineTo(xAxis3, yAxis3);
+                c.lineTo(xAxis4, yAxis2);
+                c.lineTo(xAxis3, yAxis1);
+                c.lineTo(xAxis1, yAxis1);
+                c.fillStyle = "orange";
+                c.stroke();
+                c.fill();            
+            }   else if (event.key === 'ArrowUp') {
+                yAxis1-=5
+                yAxis2-=5
+                yAxis3-=5
+                c.beginPath();
+                c.moveTo(xAxis1, yAxis1);
+                c.lineTo(xAxis2, yAxis2);
+                c.lineTo(xAxis1, yAxis3);
+                c.lineTo(xAxis3, yAxis3);
+                c.lineTo(xAxis4, yAxis2);
+                c.lineTo(xAxis3, yAxis1);
+                c.lineTo(xAxis1, yAxis1);
+                c.fillStyle = "orange";
+                c.stroke();
+                c.fill();
             }
         });
     }
@@ -121,25 +173,6 @@ window.onload = function() {
         c.lineTo(175, 5)        
         c.stroke();
         c.fillStyle = "red"
-        c.fill()
-    }
-    function makeRedI() {
-        c.beginPath()
-        c.moveTo(450, 600)
-        c.lineTo(450, 550)        
-        c.lineTo(500, 550)        
-        c.lineTo(500, 350)        
-        c.lineTo(450, 350)        
-        c.lineTo(450, 300)        
-        c.lineTo(625, 300)        
-        c.lineTo(625, 350)        
-        c.lineTo(575, 350)        
-        c.lineTo(575, 550)
-        c.lineTo(625, 550)        
-        c.lineTo(625, 600)
-        c.lineTo(450, 600)        
-        c.fillStyle = "red"
-        c.stroke();
         c.fill()
     }
 
