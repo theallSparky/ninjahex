@@ -8,7 +8,7 @@ window.onload = function() {
     const c = canvas.getContext("2d");                   //Allows us to draw shapes onto the canvas    
 
     //const startZone = c.strokeRect(10, 10, 90, 90);      // Creates the starting area
-    const endZone = c.strokeRect(650, 400, 100, 100);    // Creates the ending area
+    //const endZone = c.strokeRect(650, 400, 100, 100);    // Creates the ending area
 
 
     function makeStartingZone() {
@@ -22,19 +22,86 @@ window.onload = function() {
         c.fillStyle = "green"
         c.fill()
     }
-    function makePlayer() {                              // Draw and enclose Hex
+    function makeEndZone() {
         c.beginPath();
-        c.moveTo(45, 25);
-        c.lineTo(25, 45);
-        c.lineTo(45, 65);
-        c.lineTo(65, 65);
-        c.lineTo(85, 45);
-        c.lineTo(65, 25);
-        c.lineTo(45, 25);
+        c.moveTo(650, 400)
+        c.lineTo(650, 500)
+        c.lineTo(750, 500)
+        c.lineTo(750, 400)
+        c.lineTo(650, 400)
+        c.stroke()
+        c.fillStyle = "green"
+        c.fill()
+    }
+    function makePlayer() {             // Draw and enclose Hex
+        let xAxis1 = 45
+        let xAxis2 = 25
+        let xAxis3 = 65
+        let xAxis4 = 85
+        let yAxis1 = 35
+        let yAxis2 = 55
+        let yAxis3 = 75
+
+        c.beginPath();
+        c.moveTo(xAxis1, yAxis1);
+        c.lineTo(xAxis2, yAxis2);
+        c.lineTo(xAxis1, yAxis3);
+        c.lineTo(xAxis3, yAxis3);
+        c.lineTo(xAxis4, yAxis2);
+        c.lineTo(xAxis3, yAxis1);
+        c.lineTo(xAxis1, yAxis1);
         c.fillStyle = "orange";
         c.stroke();
-        c.fill();           
+        c.fill(); 
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowDown') {
+                yAxis1+=5
+                yAxis2+=5
+                yAxis3+=5
+                c.beginPath();
+                c.moveTo(xAxis1, yAxis1);
+                c.lineTo(xAxis2, yAxis2);
+                c.lineTo(xAxis1, yAxis3);
+                c.lineTo(xAxis3, yAxis3);
+                c.lineTo(xAxis4, yAxis2);
+                c.lineTo(xAxis3, yAxis1);
+                c.lineTo(xAxis1, yAxis1);
+                c.fillStyle = "orange";
+                c.stroke();
+                c.fill();            //} else if (event.key === 'ArrowRight') {
+            } else if (event.key === 'ArrowRight') {
+                xAxis1+=5
+                xAxis2+=5
+                xAxis3+=5
+                xAxis4+=5
+                c.beginPath();
+                c.moveTo(xAxis1, yAxis1);
+                c.lineTo(xAxis2, yAxis2);
+                c.lineTo(xAxis1, yAxis3);
+                c.lineTo(xAxis3, yAxis3);
+                c.lineTo(xAxis4, yAxis2);
+                c.lineTo(xAxis3, yAxis1);
+                c.lineTo(xAxis1, yAxis1);
+                c.fillStyle = "orange";
+                c.stroke();
+                c.fill();            
+                //} else if (event.key === 'ArrowRight') {
+            }
+        });
     }
+
+        // c.beginPath();
+        // c.moveTo(xAxis1, yAxis1);
+        // c.lineTo(xAxis2, yAxis2);
+        // c.lineTo(xAxis1, yAxis3);
+        // c.lineTo(xAxis3, yAxis3);
+        // c.lineTo(xAxis4, yAxis2);
+        // c.lineTo(xAxis3, yAxis1);
+        // c.lineTo(xAxis1, yAxis1);
+        // c.fillStyle = "orange";
+        // c.stroke();
+        // c.fill();           
+    
     function makeBoundary() {                            // Draws the border of playable window 5px away from edge of canvas
         c.beginPath();
         c.moveTo(5, 5);
@@ -76,16 +143,23 @@ window.onload = function() {
         c.fill()
     }
 
-
-
-    makeStartingZone()
+    draw()
+    makeStartingZone()      // To actually put the shapes on the canvas
+    makeEndZone()
     makePlayer();
     makeBoundary();
     makeRedL();
     makeRedI();
 
-
-    //SET TIMEOUT OR WINDOW.REQUESTANIMATIONFRAME(CALLBACK)
-    //SET C
-
+     //setInterval(draw, 50)             //The js logic to referesh the cavas every '20' ms
+  
+    function draw() {                   //Clears and redraws all other shape functions 
+        c.clearRect(0, 0, 800, 600)
+        makeStartingZone();
+        makeEndZone();
+        makeBoundary();
+        makeRedL();
+        makeRedI();
+        makePlayer();
+    }
 }
