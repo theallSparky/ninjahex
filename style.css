@@ -2,7 +2,12 @@ body {
     background-color: whitesmoke;
 }
 
+.button {
+    margin: 25px;
+}
+
 #canvas {
+    display: grid;
     background-color: honeydew;
     border: 1px solid black;
     width: 60%;

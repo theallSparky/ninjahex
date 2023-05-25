@@ -8,6 +8,8 @@ window.onload = function() {
     const c = canvas.getContext("2d")                    // Allows us to draw shapes onto the canvas    
 
     // Adjust teh size?
+    
+
 
     function makeStartingZone() {                         // Creates the starting zone
         c.beginPath()
@@ -177,6 +179,12 @@ window.onload = function() {
         makeRedI()
         makePlayer()
     }
+    function resetPlayer() {
+        location.reload()
+    }
+
+    const resetButton = document.querySelector('#reset')
+    resetButton.addEventListener('click', resetPlayer)
 
     draw()                  // To actually put the shapes on the canvas each frame --- From here.... 
     makeStartingZone()      
