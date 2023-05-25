@@ -7,6 +7,8 @@ window.onload = function() {
     const canvas = document.getElementById('canvas')     // Generates the canvas upon loading up of the page
     const c = canvas.getContext("2d")                    // Allows us to draw shapes onto the canvas    
 
+    // Adjust teh size?
+
     function makeStartingZone() {                         // Creates the starting zone
         c.beginPath()
         c.moveTo(10, 10)
@@ -14,6 +16,7 @@ window.onload = function() {
         c.lineTo(100, 100)
         c.lineTo(100, 10)
         c.lineTo(10, 10)
+        c.lineWidth = 5;
         c.stroke()
         c.fillStyle = "green"
         c.fill()
@@ -76,6 +79,7 @@ window.onload = function() {
         c.lineTo(xAxis1, yAxis2)
         c.lineTo(xAxis2, yAxis2)
         c.lineTo(xAxis2, yAxis1)
+        c.lineTo(xAxis1 - 2, yAxis1)
         c.fillStyle = "orange"
         c.stroke()
         c.fill()
@@ -88,10 +92,11 @@ window.onload = function() {
                 c.lineTo(xAxis1, yAxis2)
                 c.lineTo(xAxis2, yAxis2)
                 c.lineTo(xAxis2, yAxis1)
+                c.lineTo(xAxis1 - 2, yAxis1)
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill()
-                checkBoundaries()        
+                checkAllBoundaries()        
             } else if (event.key === 'ArrowRight') {
                 xAxis1+=5
                 xAxis2+=5
@@ -100,10 +105,11 @@ window.onload = function() {
                 c.lineTo(xAxis1, yAxis2)
                 c.lineTo(xAxis2, yAxis2)
                 c.lineTo(xAxis2, yAxis1)
+                c.lineTo(xAxis1 - 2, yAxis1)
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill() 
-                checkBoundaries()         
+                checkAllBoundaries()         
             }  else if (event.key === 'ArrowLeft') {
                 xAxis1-=5
                 xAxis2-=5
@@ -113,10 +119,11 @@ window.onload = function() {
                 c.lineTo(xAxis1, yAxis2)
                 c.lineTo(xAxis2, yAxis2)
                 c.lineTo(xAxis2, yAxis1)
+                c.lineTo(xAxis1 - 2, yAxis1)
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill()
-                checkBoundaries()                    
+                checkAllBoundaries()                    
             }   else if (event.key === 'ArrowUp') {
                 yAxis1-=5
                 yAxis2-=5
@@ -125,10 +132,11 @@ window.onload = function() {
                 c.lineTo(xAxis1, yAxis2)
                 c.lineTo(xAxis2, yAxis2)
                 c.lineTo(xAxis2, yAxis1)
+                c.lineTo(xAxis1 - 2, yAxis1)
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill()
-                checkBoundaries()          
+                checkAllBoundaries()          
             }
         });
         function checkCollisionBoundary() {
@@ -152,7 +160,7 @@ window.onload = function() {
                 alert('Congratulations! You win, sucka')
             }  
         }
-        function checkBoundaries() {
+        function checkAllBoundaries() {
             checkCollisionBoundary()
             checkCollisionRedL()
             checkCollisionRedI()
@@ -170,14 +178,11 @@ window.onload = function() {
         makePlayer()
     }
 
-    draw()
-    makeStartingZone()      // To actually put the shapes on the canvas
+    draw()                  // To actually put the shapes on the canvas each frame --- From here.... 
+    makeStartingZone()      
     makeEndZone()
     makeBoundary()
     makeRedL()
-    makeRedI()
-    makePlayer()
-
-
-  
+    makeRedI()              // ....To here. 
+    makePlayer()            
 }
