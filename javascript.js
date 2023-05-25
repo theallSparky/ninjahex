@@ -15,7 +15,7 @@ window.onload = function() {
         c.lineTo(10, 100)
         c.lineTo(100, 100)
         c.lineTo(100, 10)
-        c.lineTo(10, 10)
+        c.lineTo(8, 10)
         c.lineWidth = 5;
         c.stroke()
         c.fillStyle = "green"
@@ -28,7 +28,7 @@ window.onload = function() {
         c.lineTo(650, 500)
         c.lineTo(750, 500)
         c.lineTo(750, 400)
-        c.lineTo(650, 400)
+        c.lineTo(648, 400)
         c.stroke()
         c.fillStyle = "green"
         c.fill()
