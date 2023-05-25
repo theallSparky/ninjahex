@@ -91,8 +91,7 @@ window.onload = function() {
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill()
-                checkCollisionRedL()
-                checkCollisionRedI()        
+                checkBoundaries()        
             } else if (event.key === 'ArrowRight') {
                 xAxis1+=5
                 xAxis2+=5
@@ -104,8 +103,7 @@ window.onload = function() {
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill() 
-                checkCollisionRedL()
-                checkCollisionRedI()         
+                checkBoundaries()         
             }  else if (event.key === 'ArrowLeft') {
                 xAxis1-=5
                 xAxis2-=5
@@ -118,8 +116,7 @@ window.onload = function() {
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill()
-                checkCollisionRedL()
-                checkCollisionRedI()                    
+                checkBoundaries()                    
             }   else if (event.key === 'ArrowUp') {
                 yAxis1-=5
                 yAxis2-=5
@@ -131,19 +128,35 @@ window.onload = function() {
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill()
-                checkCollisionRedL()
-                checkCollisionRedI()          
+                checkBoundaries()          
             }
         });
+        function checkCollisionBoundary() {
+            if (xAxis1 <= 5 || xAxis2 >= 795 || yAxis1 <= 5 || yAxis2 >= 595) {
+                alert('You touched the boundary, game over sucka!')
+
+            }
+        }
         function checkCollisionRedL() {
             if (xAxis1 <= 175 && xAxis2 >= 110 && yAxis1 <= 500) {
-                alert('game over sucka')   
+                alert('How did you touch the first red box? Game over sucka!')
             }
         }
         function checkCollisionRedI() {
-            if (xAxis2 >=500 && xAxis1 <= 575 && yAxis2 >=300)
-                alert('game over sucka')   
-
+            if (xAxis2 >=500 && xAxis1 <= 575 && yAxis2 >=300) {
+                alert('Game over sucka')
+            }
+        }
+        function didYouWinYet() {
+            if (xAxis1 >= 650 && xAxis2 <= 750 && yAxis1 >=400 && yAxis2 <= 500) {
+                alert('Congratulations! You win, sucka')
+            }  
+        }
+        function checkBoundaries() {
+            checkCollisionBoundary()
+            checkCollisionRedL()
+            checkCollisionRedI()
+            didYouWinYet()
         }
     }                         
 
