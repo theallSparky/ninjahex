@@ -40,7 +40,7 @@ window.onload = function() {
         c.lineTo(5, 595)
         c.lineTo(795, 595)
         c.lineTo(795, 5)
-        c.lineTo(5, 5)
+        c.lineTo(5-2, 5)                                 // -2 fixes the bottom left visial bug
         c.strokeStyle = "red"
         c.stroke()
     }
@@ -50,7 +50,9 @@ window.onload = function() {
         c.moveTo(110, 5)
         c.lineTo(110, 500)
         c.lineTo(175, 500)
-        c.lineTo(175, 5)        
+        c.lineTo(175, 5)
+        c.lineTo(110-2, 5)                                // -2 fixes the top left visial bug     
+        c.strokeStyle = "black"
         c.stroke()
         c.fillStyle = "red"
         c.fill()
@@ -62,10 +64,10 @@ window.onload = function() {
         c.lineTo(500, 300)        
         c.lineTo(575, 300)        
         c.lineTo(575, 595)
-        c.lineTo(450, 595)
-        c.lineTo(500, 595)        
-        c.fillStyle = "red"
+        c.lineTo(500-2, 595)                              // -2 fixes the bottom left visial bug 
+        c.strokeStyle = "black"
         c.stroke()
+        c.fillStyle = "red"
         c.fill()
     }
 
