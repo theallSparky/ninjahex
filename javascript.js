@@ -19,6 +19,7 @@ window.onload = function() {
         c.lineTo(100, 10)
         c.lineTo(8, 10)
         c.lineWidth = 5;
+        c.strokeStyle = "black"
         c.stroke()
         c.fillStyle = "green"
         c.fill()
@@ -31,6 +32,7 @@ window.onload = function() {
         c.lineTo(750, 500)
         c.lineTo(750, 400)
         c.lineTo(648, 400)
+        c.strokeStyle = "black"
         c.stroke()
         c.fillStyle = "green"
         c.fill()
@@ -43,6 +45,7 @@ window.onload = function() {
         c.lineTo(795, 595)
         c.lineTo(795, 5)
         c.lineTo(5, 5)
+        c.strokeStyle = "red"
         c.stroke()
     }
 
@@ -83,6 +86,7 @@ window.onload = function() {
         c.lineTo(xAxis2, yAxis1)
         c.lineTo(xAxis1 - 2, yAxis1)
         c.fillStyle = "orange"
+        c.strokeStyle = "black"
         c.stroke()
         c.fill()
         document.addEventListener('keydown', (event) => {
@@ -144,22 +148,25 @@ window.onload = function() {
         function checkCollisionBoundary() {
             if (xAxis1 <= 5 || xAxis2 >= 795 || yAxis1 <= 5 || yAxis2 >= 595) {
                 alert('You touched the boundary, game over sucka!')
-
+                location.reload()
             }
         }
         function checkCollisionRedL() {
             if (xAxis1 <= 175 && xAxis2 >= 110 && yAxis1 <= 500) {
                 alert('How did you touch the first red box? Game over sucka!')
+                location.reload()
             }
         }
         function checkCollisionRedI() {
             if (xAxis2 >=500 && xAxis1 <= 575 && yAxis2 >=300) {
                 alert('Game over sucka')
+                location.reload()
             }
         }
         function didYouWinYet() {
             if (xAxis1 >= 650 && xAxis2 <= 750 && yAxis1 >=400 && yAxis2 <= 500) {
                 alert('Congratulations! You win, sucka')
+                location.reload()
             }  
         }
         function checkAllBoundaries() {
@@ -179,6 +186,7 @@ window.onload = function() {
         makeRedI()
         makePlayer()
     }
+
     function resetPlayer() {
         location.reload()
     }
