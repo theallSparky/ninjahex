@@ -5,11 +5,7 @@
 window.onload = function() {
 
     const canvas = document.getElementById('canvas')     // Generates the canvas upon loading up of the page
-    const c = canvas.getContext("2d")                    // Allows us to draw shapes onto the canvas    
-
-    // Adjust teh size?
-    
-
+    const c = canvas.getContext("2d")                    // Allows us to draw shapes onto the canvas        
 
     function makeStartingZone() {                         // Creates the starting zone
         c.beginPath()
@@ -84,7 +80,7 @@ window.onload = function() {
         c.lineTo(xAxis1, yAxis2)
         c.lineTo(xAxis2, yAxis2)
         c.lineTo(xAxis2, yAxis1)
-        c.lineTo(xAxis1 - 2, yAxis1)
+        c.lineTo(xAxis1 - 2, yAxis1)                // -2 to fix the visual glitch of top left not fully applying the 5px thickness uniformly
         c.fillStyle = "orange"
         c.strokeStyle = "black"
         c.stroke()
@@ -98,7 +94,7 @@ window.onload = function() {
                 c.lineTo(xAxis1, yAxis2)
                 c.lineTo(xAxis2, yAxis2)
                 c.lineTo(xAxis2, yAxis1)
-                c.lineTo(xAxis1 - 2, yAxis1)
+                c.lineTo(xAxis1 - 2, yAxis1)        // -2 to fix the visual glitch of top left not fully applying the 5px thickness uniformly
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill()
@@ -111,7 +107,7 @@ window.onload = function() {
                 c.lineTo(xAxis1, yAxis2)
                 c.lineTo(xAxis2, yAxis2)
                 c.lineTo(xAxis2, yAxis1)
-                c.lineTo(xAxis1 - 2, yAxis1)
+                c.lineTo(xAxis1 - 2, yAxis1)        // -2 to fix the visual glitch of top left not fully applying the 5px thickness uniformly
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill() 
@@ -125,7 +121,7 @@ window.onload = function() {
                 c.lineTo(xAxis1, yAxis2)
                 c.lineTo(xAxis2, yAxis2)
                 c.lineTo(xAxis2, yAxis1)
-                c.lineTo(xAxis1 - 2, yAxis1)
+                c.lineTo(xAxis1 - 2, yAxis1)        // -2 to fix the visual glitch of top left not fully applying the 5px thickness uniformly
                 c.fillStyle = "orange"
                 c.stroke()
                 c.fill()
@@ -145,32 +141,32 @@ window.onload = function() {
                 checkAllBoundaries()          
             }
         });
-        function checkCollisionBoundary() {
+        function checkCollisionOuterBoundary() {
             if (xAxis1 <= 5 || xAxis2 >= 795 || yAxis1 <= 5 || yAxis2 >= 595) {
-                alert('You touched the boundary, game over sucka!')
+                alert('You Touched The Boundary, Game Over, Sucka!')
                 location.reload()
             }
         }
         function checkCollisionRedL() {
             if (xAxis1 <= 175 && xAxis2 >= 110 && yAxis1 <= 500) {
-                alert('How did you touch the first red box? Game over sucka!')
+                alert('How did you touch the first red box? Game Over, Sucka!')
                 location.reload()
             }
         }
         function checkCollisionRedI() {
             if (xAxis2 >=500 && xAxis1 <= 575 && yAxis2 >=300) {
-                alert('Game over sucka')
+                alert('Game Over Sucka!')
                 location.reload()
             }
         }
         function didYouWinYet() {
             if (xAxis1 >= 650 && xAxis2 <= 750 && yAxis1 >=400 && yAxis2 <= 500) {
-                alert('Congratulations! You win, sucka')
+                alert('Congratulations! You Win, Sucka')
                 location.reload()
             }  
         }
         function checkAllBoundaries() {
-            checkCollisionBoundary()
+            checkCollisionOuterBoundary()
             checkCollisionRedL()
             checkCollisionRedI()
             didYouWinYet()
@@ -193,6 +189,14 @@ window.onload = function() {
 
     const resetButton = document.querySelector('#reset')
     resetButton.addEventListener('click', resetPlayer)
+    const coolButton = document.querySelector('#cool-button')
+    coolButton.addEventListener('click', (event) => {
+        alert("Yay! You're cool!")
+    })
+    const coolerButton = document.querySelector('#cooler-button')
+    coolerButton.addEventListener('click'), (event) => {
+        alert("You fell for the trap! No cookie for you!")
+    }
 
     draw()                  // To actually put the shapes on the canvas each frame --- From here.... 
     makeStartingZone()      
