@@ -8,12 +8,12 @@ The source of inspiration for this project stems from an internet classic 'World
 
 
 
-    TO ACTUALLY PLAY:
-To begin playing this game, one simply has to visit sparkysboxgame.surge.sh
+TO ACTUALLY PLAY:
+To begin playing this game, one simply has to visit             sparkysboxgame.surge.sh
 Do enjoy! :)
 
 
-    References:
+References:
 There were very many resources which I combed through in order to find the appropriate functions, such as how to create a canvas in the first place, which I referenced Sololearn's Game Development course, or the YouTube Channel Fireship for web dev tips, JS tips, and general CS. Special thank you to Jordan for assisting in movement logic implementation and to Tylus for helping in cracking resetting the canvas. I came into project week somewhat behind due to missing 12~ hours the week prior (last week at time of typing). During this time is when trello and figma was showcased. I have not utilized Trello whatsoever for this project and will be creating one after reaching mvp right before project due time for aquaintance with the platform. During the very beginning of project week, I prioritized reviewing and creating figma to help me visualize, but when meeting with Jeremy and being told to focus on getting JavaScript down first, I abandoned Trello until now, the end.
 
 Here is my Figma design:
