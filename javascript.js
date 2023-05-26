@@ -189,14 +189,16 @@ window.onload = function() {
 
     const resetButton = document.querySelector('#reset')
     resetButton.addEventListener('click', resetPlayer)
+
     const coolButton = document.querySelector('#cool-button')
     coolButton.addEventListener('click', (event) => {
         alert("Yay! You're cool!")
     })
+
     const coolerButton = document.querySelector('#cooler-button')
-    coolerButton.addEventListener('click'), (event) => {
+    coolerButton.addEventListener('click', (event) => {
         alert("You fell for the trap! No cookie for you!")
-    }
+    })
 
     draw()                  // To actually put the shapes on the canvas each frame --- From here.... 
     makeStartingZone()      
