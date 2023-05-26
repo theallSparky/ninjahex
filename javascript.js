@@ -51,7 +51,7 @@ window.onload = function() {
         c.lineTo(110, 500)
         c.lineTo(175, 500)
         c.lineTo(175, 5)
-        c.lineTo(110-2, 5)          // -2 fixes the top left visial bug     
+        c.lineTo(110-2, 5)          // -2 fixes the top left visial bug
         c.strokeStyle = "black"
         c.stroke()
         c.fillStyle = "red"
