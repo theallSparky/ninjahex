@@ -87,7 +87,7 @@ window.onload = function() {
         c.strokeStyle = "black"
         c.stroke()
         c.fill()
-        document.addEventListener('keydown', (event) => {
+        document.addEventListener('keydown', (event) => {   // If up, right, down, or left is pressed, increment/decrement corresponding xAxis & yAxis positions according to whichever button
             if (event.key === 'ArrowDown') {
                 yAxis1+=5
                 yAxis2+=5
@@ -176,7 +176,7 @@ window.onload = function() {
     }                         
 
     function draw() {                   //Clears and redraws all other shape functions 
-        c.clearRect(0, 0, 800, 600)
+        c.clearRect(0, 0, 800, 600)     //Set to 800 and 600 to clear entire canvas with each press of a directional button
         makeStartingZone()
         makeEndZone()
         makeBoundary()
