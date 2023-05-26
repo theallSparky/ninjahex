@@ -49,7 +49,9 @@ window.onload = function() {
         c.beginPath()
         c.moveTo(110, 5)
         c.lineTo(110, 500)
-        c.lineTo(175, 500)
+        c.lineTo(300, 500)
+        c.lineTo(300,450)
+        c.lineTo(175, 450)
         c.lineTo(175, 5)
         c.lineTo(110-2, 5)          // -2 fixes the top left visial bug
         c.strokeStyle = "black"
@@ -150,12 +152,12 @@ window.onload = function() {
             }
         }
         function checkCollisionRedL() {
-            if (xAxis1 <= 175 && xAxis2 >= 110 && yAxis1 <= 500) {
-                alert('How did you touch the first red box? Game Over, Sucka!')
+            if (xAxis1 <= 175 && xAxis2 >= 110 && yAxis1 <= 500 || xAxis1 <= 300 && xAxis2 >= 175 && yAxis1 <= 500 && yAxis2 >=450) {
+                alert('How did you touch the red L? If you want it so badly, then take the L! Game Over, Sucka!')
                 location.reload()
             }
         }
-        function checkCollisionRedI() {
+        function checkCollisionRedT() {
             if (xAxis2 >=500 && xAxis1 <= 575 && yAxis2 >=300) {
                 alert('Game Over Sucka!')
                 location.reload()
@@ -170,7 +172,7 @@ window.onload = function() {
         function checkAllBoundaries() {
             checkCollisionOuterBoundary()
             checkCollisionRedL()
-            checkCollisionRedI()
+            checkCollisionRedT()
             didYouWinYet()
         }
     }                         
