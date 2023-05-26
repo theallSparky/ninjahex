@@ -7,7 +7,7 @@ window.onload = function() {
     const canvas = document.getElementById('canvas')     // Generates the canvas upon loading up of the page
     const c = canvas.getContext("2d")                    // Allows us to draw shapes onto the canvas        
 
-    function makeStartingZone() {                         // Creates the starting zone
+    function makeStartingZone() {   // Creates the starting zone
         c.beginPath()
         c.moveTo(10, 10)
         c.lineTo(10, 100)
@@ -21,7 +21,7 @@ window.onload = function() {
         c.fill()
     }
 
-    function makeEndZone() {                              // Creates the ending zone
+    function makeEndZone() {       // Creates the ending zone
         c.beginPath()
         c.moveTo(650, 400)
         c.lineTo(650, 500)
@@ -34,13 +34,13 @@ window.onload = function() {
         c.fill()
     }
 
-    function makeBoundary() {                            // Draws the border of playable window 5px away from edge of canvas
+    function makeBoundary() {     // Draws the border of playable window 5px away from edge of canvas
         c.beginPath()
         c.moveTo(5, 5)
         c.lineTo(5, 595)
         c.lineTo(795, 595)
         c.lineTo(795, 5)
-        c.lineTo(5-2, 5)                                 // -2 fixes the bottom left visial bug
+        c.lineTo(5-2, 5)           // -2 fixes the bottom left visial bug
         c.strokeStyle = "red"
         c.stroke()
     }
@@ -51,20 +51,20 @@ window.onload = function() {
         c.lineTo(110, 500)
         c.lineTo(175, 500)
         c.lineTo(175, 5)
-        c.lineTo(110-2, 5)                                // -2 fixes the top left visial bug     
+        c.lineTo(110-2, 5)          // -2 fixes the top left visial bug     
         c.strokeStyle = "black"
         c.stroke()
         c.fillStyle = "red"
         c.fill()
     }
 
-    function makeRedI() {                                 // Creates the red 'I' zone
+    function makeRedI() {           // Creates the red 'I' zone
         c.beginPath()
         c.moveTo(500, 595)
         c.lineTo(500, 300)        
         c.lineTo(575, 300)        
         c.lineTo(575, 595)
-        c.lineTo(500-2, 595)                              // -2 fixes the bottom left visial bug 
+        c.lineTo(500-2, 595)        // -2 fixes the bottom left visial bug 
         c.strokeStyle = "black"
         c.stroke()
         c.fillStyle = "red"

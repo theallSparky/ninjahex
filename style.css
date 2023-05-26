@@ -1,11 +1,16 @@
 body {
     background-color: whitesmoke;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .button {
     margin: 25px;
 }
 
+h1 {
+    display: grid
+    
+}
 #canvas {
     display: grid;
     background-color: honeydew;
