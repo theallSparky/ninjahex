@@ -24,4 +24,4 @@ Here is my Trello board:
 
 
 
-I hope this sounds prefessional enough. Hope y'all enjoy!
+I hope this sounds prefessional enough. Hope y'all enjoy! 
