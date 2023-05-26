@@ -16,6 +16,9 @@ Do enjoy! :)
 References:
 There were very many resources which I combed through in order to find the appropriate functions, such as how to create a canvas in the first place, which I referenced Sololearn's Game Development course, or the YouTube Channel Fireship for web dev tips, JS tips, and general CS. Special thank you to Jordan for assisting in movement logic implementation and to Tylus for helping in cracking resetting the canvas. I came into project week somewhat behind due to missing 12~ hours the week prior (last week at time of typing). During this time is when trello and figma was showcased. I have not utilized Trello whatsoever for this project and will be creating one after reaching mvp right before project due time for aquaintance with the platform. During the very beginning of project week, I prioritized reviewing and creating figma to help me visualize, but when meeting with Jeremy and being told to focus on getting JavaScript down first, I abandoned Trello until now, the end.
 
+My reference in getting music to autoplay when tab loads in:
+https://stackoverflow.com/questions/7281765/how-to-embed-an-autoplaying-youtube-video-in-an-iframe
+
 Here is my Figma design:
         https://www.figma.com/file/at0ll4jvhaOUGRDqufQ3nz/Ninja-Hex?type=design&node-id=0-1&t=I93ToyfR5ZCGIaAj-0
 
