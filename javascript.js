@@ -62,10 +62,14 @@ window.onload = function() {
 
     function makeRedI() {           // Creates the red 'I' zone
         c.beginPath()
-        c.moveTo(500, 595)
-        c.lineTo(500, 300)        
-        c.lineTo(575, 300)        
-        c.lineTo(575, 595)
+        c.moveTo(500, 595)  // bottom left
+        c.lineTo(500, 350)
+        c.lineTo(425, 350) 
+        c.lineTo(425, 300)  // top left
+        c.lineTo(650, 300)  // top right
+        c.lineTo(650, 350)
+        c.lineTo(575, 350)                
+        c.lineTo(575, 595)  // bottom right
         c.lineTo(500-2, 595)        // -2 fixes the bottom left visial bug 
         c.strokeStyle = "black"
         c.stroke()
@@ -158,10 +162,10 @@ window.onload = function() {
             }
         }
         function checkCollisionRedT() {
-            if (xAxis2 >=500 && xAxis1 <= 575 && yAxis2 >=300) {
+            if (xAxis2 >=500 && xAxis1 <= 575 && yAxis2 >=350 || xAxis1 <= 650 && xAxis2 >= 425 && yAxis1 <= 350 && yAxis2 >= 300) {
                 alert('Game Over Sucka!')
                 location.reload()
-            }
+            } 
         }
         function didYouWinYet() {
             if (xAxis1 >= 650 && xAxis2 <= 750 && yAxis1 >=400 && yAxis2 <= 500) {
