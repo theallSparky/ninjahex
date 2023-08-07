@@ -1,0 +1,41 @@
+Make the canvas
+Make the Starting and End zones
+Make red outer boundary
+Create the logic to detect the red outer Boundary
+
+
+
+Create player upon window load
+Create logic to erase player box per key press
+Create logic to update player coords per key press and redraws
+
+
+Create logic for each shape per Level
+Create logic to detect endzone collision, then load next level
+
+
+
+---------
+Make player
+Make background
+Then level specific shapes ( Including start/end zone locations)
+Move player
+then check collision
+redraw shapes
+move player
+Move player
+then check collision
+redraw shapes
+move player
+Move player
+then check collision
+redraw shapes
+move player
+Move player
+then check collision
+redraw shapes
+move player
+Move player
+then check collision
+redraw shapes
+move player
