@@ -6,7 +6,9 @@ window.onload = function() {
     const canvas = document.getElementById('canvas')            // Generates the canvas upon loading up of the page
     const c = canvas.getContext("2d")                           // Allows us to draw shapes onto the canvas        
 
-    function makeStartingZone() {   // Creates the starting green zone
+    let level = 1
+
+    function makeStartingZoneLevel1() {   // Creates the starting green zone
         c.beginPath()
         c.moveTo(10, 10)
         c.lineTo(10, 100)
@@ -15,12 +17,12 @@ window.onload = function() {
         c.lineTo(8, 10)
         c.lineWidth = 5;
         c.strokeStyle = "black"
-        c.stroke()
         c.fillStyle = "green"
+        c.stroke()
         c.fill()
     }
 
-    function makeEndZone() {       // Creates the ending green zone
+    function makeEndZoneLevel1() {       // Creates the ending green zone
         c.beginPath()
         c.moveTo(650, 400)
         c.lineTo(650, 500)
@@ -28,8 +30,8 @@ window.onload = function() {
         c.lineTo(750, 400)
         c.lineTo(648, 400)
         c.strokeStyle = "black"
-        c.stroke()
         c.fillStyle = "green"
+        c.stroke()
         c.fill()
     }
 
@@ -54,8 +56,8 @@ window.onload = function() {
         c.lineTo(175, 10)
         c.lineTo(110-2, 10)          // -2 fixes the top left visial bug
         c.strokeStyle = "black"
-        c.stroke()
         c.fillStyle = "red"
+        c.stroke()
         c.fill()
     }
 
@@ -71,8 +73,8 @@ window.onload = function() {
         c.lineTo(575, 590)  // bottom right
         c.lineTo(500-2, 590)        // -2 fixes the bottom left visial bug 
         c.strokeStyle = "black"
-        c.stroke()
         c.fillStyle = "red"
+        c.stroke()
         c.fill()
     }
 
@@ -99,8 +101,8 @@ window.onload = function() {
                 yAxis1+=5
                 yAxis2+=5
                 checkAllBoundariesOnLevel1()
-                makeStartingZone()
-                makeEndZone()
+                makeStartingZoneLevel1()
+                makeEndZoneLevel1()
                 c.beginPath()
                 c.moveTo(xAxis1, yAxis1)
                 c.lineTo(xAxis1, yAxis2)
@@ -116,8 +118,8 @@ window.onload = function() {
                 xAxis1+=5
                 xAxis2+=5
                 checkAllBoundariesOnLevel1()
-                makeStartingZone()
-                makeEndZone()
+                makeStartingZoneLevel1()
+                makeEndZoneLevel1()
                 c.beginPath()
                 c.moveTo(xAxis1, yAxis1)
                 c.lineTo(xAxis1, yAxis2)
@@ -133,8 +135,8 @@ window.onload = function() {
                 xAxis1-=5
                 xAxis2-=5
                 checkAllBoundariesOnLevel1()
-                makeStartingZone()
-                makeEndZone()
+                makeStartingZoneLevel1()
+                makeEndZoneLevel1()
                 c.beginPath()
                 c.moveTo(xAxis1, yAxis1)
                 c.lineTo(xAxis1, yAxis2)
@@ -150,8 +152,8 @@ window.onload = function() {
                 yAxis1-=5
                 yAxis2-=5
                 checkAllBoundariesOnLevel1()
-                makeStartingZone()
-                makeEndZone()
+                makeStartingZoneLevel1()
+                makeEndZoneLevel1()
                 c.beginPath()
                 c.moveTo(xAxis1, yAxis1)
                 c.lineTo(xAxis1, yAxis2)
@@ -198,8 +200,8 @@ window.onload = function() {
     }                         
 
     function draw() {                   //Clears and redraws all other shape functions 
-        makeStartingZone()
-        makeEndZone()
+        makeStartingZoneLevel1()
+        makeEndZoneLevel1()
         makeOuterRedBoundary()
         makeRedLOnLevel1()
         makeRedTOnLevel1() 
