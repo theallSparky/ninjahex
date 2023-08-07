@@ -209,6 +209,17 @@ window.onload = function() {
     function resetPlayer() {
         location.reload()
     }
+    const resetButton = document.querySelector('#reset')
+    resetButton.addEventListener('click', resetPlayer)
+    const coolButton = document.querySelector('#cool-button')
+    coolButton.addEventListener('click', (event) => {
+        alert("Yay! You're cool!")
+    })
+    const coolerButton = document.querySelector('#cooler-button')
+    coolerButton.addEventListener('click', (event) => {
+        alert("You fell for the trap! No cookie for you!")
+        resetPlayer()
+    })
 
     draw()
     makePlayer()
