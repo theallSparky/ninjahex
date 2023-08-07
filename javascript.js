@@ -46,13 +46,13 @@ window.onload = function() {
 
     function makeRedLOnLevel1() {
         c.beginPath()
-        c.moveTo(110, 5)
+        c.moveTo(110, 10)
         c.lineTo(110, 500)
         c.lineTo(300, 500)
-        c.lineTo(300,450)
+        c.lineTo(300, 450)
         c.lineTo(175, 450)
-        c.lineTo(175, 5)
-        c.lineTo(110-2, 5)          // -2 fixes the top left visial bug
+        c.lineTo(175, 10)
+        c.lineTo(110-2, 10)          // -2 fixes the top left visial bug
         c.strokeStyle = "black"
         c.stroke()
         c.fillStyle = "red"
@@ -61,15 +61,15 @@ window.onload = function() {
 
     function makeRedTOnLevel1() {           // Creates the red 'I' zone
         c.beginPath()
-        c.moveTo(500, 595)  // bottom left
+        c.moveTo(500, 590)  // bottom left
         c.lineTo(500, 350)
         c.lineTo(425, 350) 
         c.lineTo(425, 300)  // top left
         c.lineTo(650, 300)  // top right
         c.lineTo(650, 350)
         c.lineTo(575, 350)                
-        c.lineTo(575, 595)  // bottom right
-        c.lineTo(500-2, 595)        // -2 fixes the bottom left visial bug 
+        c.lineTo(575, 590)  // bottom right
+        c.lineTo(500-2, 590)        // -2 fixes the bottom left visial bug 
         c.strokeStyle = "black"
         c.stroke()
         c.fillStyle = "red"
