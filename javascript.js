@@ -224,5 +224,5 @@ window.onload = function() {
     })
 
     draw()
-    makePlayer()
+    // makePlayer()
 }
