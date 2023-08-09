@@ -1,12 +1,13 @@
 // A special thank you to youtuber 'Chris DeLeon of HomeTeam GameDev' 
 // with his video 'Coding an HTML5 Canvas Game with JS in 5 min 30 sec' 
 // for helping me with the setup            :)
+let level = 1
+console.log(level)
+
 window.onload = function() {
 
     const canvas = document.getElementById('canvas')            // Generates the canvas upon loading up of the page
     const c = canvas.getContext("2d")                           // Allows us to draw shapes onto the canvas        
-
-    let level = 1
 
     function makeStartingZoneLevel1() {   // Creates the starting green zone
         c.beginPath()
@@ -78,7 +79,7 @@ window.onload = function() {
         c.fill()
     }
 
-    function makePlayer() {                                     // Draw and enclose player
+    function makePlayerLevel1() {                                     // Draw and enclose player
         let xAxis1 = 50                                         // Sets the spawn location of player's corners upon initial loading up of level/keystroke
         let xAxis2 = 80
         let yAxis1 = 30
@@ -188,7 +189,9 @@ window.onload = function() {
         function didYouWinYetOnLevel1() {
             if (xAxis1 >= 650 && xAxis2 <= 750 && yAxis1 >=400 && yAxis2 <= 500) {
                 alert('Congratulations! You Win, Sucka')
-                location.reload()
+                console.log(`Congrats on pasing ${level}`)
+                level++
+                console.log(`Good luck with level ${level}`)
             }  
         }
         function checkAllBoundariesOnLevel1() {
@@ -199,18 +202,26 @@ window.onload = function() {
         }
     }                         
 
-    function draw() {                   //Clears and redraws all other shape functions 
+    function drawLevel1() {                   //Clears and redraws all other shape functions 
         makeStartingZoneLevel1()
         makeEndZoneLevel1()
         makeOuterRedBoundary()
         makeRedLOnLevel1()
         makeRedTOnLevel1() 
-        makePlayer()
+        makePlayerLevel1()
+    }
+
+    function drawLevel2() {
+        makeStartingZoneLevel1()
+        makeEndZoneLevel1()
+        makeOuterRedBoundary()
+        makePlayerLevel1()
     }
 
     function resetPlayer() {
         location.reload()
     }
+
     const resetButton = document.querySelector('#reset')
     resetButton.addEventListener('click', resetPlayer)
     const coolButton = document.querySelector('#cool-button')
@@ -223,6 +234,9 @@ window.onload = function() {
         resetPlayer()
     })
 
-    draw()
-    // makePlayer()
+    if ( level = 1 ) {
+        drawLevel1()
+    } else if ( level = 2 ) {
+        drawLevel2()
+    }
 }
