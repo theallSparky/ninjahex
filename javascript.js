@@ -1,13 +1,13 @@
 // A special thank you to youtuber 'Chris DeLeon of HomeTeam GameDev' 
 // with his video 'Coding an HTML5 Canvas Game with JS in 5 min 30 sec' 
 // for helping me with the setup            :)
-let level = 1
-console.log(level)
-
 window.onload = function() {
-
+    
     const canvas = document.getElementById('canvas')            // Generates the canvas upon loading up of the page
     const c = canvas.getContext("2d")                           // Allows us to draw shapes onto the canvas        
+    
+    let level = 1
+    console.log(`It is level ${level}`)
 
     function makeStartingZoneLevel1() {   // Creates the starting green zone
         c.beginPath()
@@ -97,7 +97,7 @@ window.onload = function() {
         c.fill()
         
         document.addEventListener('keydown', (event) => {       // If up, right, down, or left is pressed, increment/decrement corresponding xAxis & yAxis positions according to whichever button
-            if (event.key === 'ArrowDown') {
+            if (event.key === 'ArrowDown' || event.key === 's') {
                 c.clearRect(xAxis1-3, yAxis1-3, 36, 36)         // Clears player box upon each keystroke
                 yAxis1+=5
                 yAxis2+=5
@@ -114,7 +114,7 @@ window.onload = function() {
                 c.strokeStyle = "black"
                 c.stroke()
                 c.fill()             
-            } else if (event.key === 'ArrowRight') {
+            } else if (event.key === 'ArrowRight' || event.key === 'd') {
                 c.clearRect(xAxis1-3, yAxis1-3, 36, 36)         // Clears player box upon each keystroke
                 xAxis1+=5
                 xAxis2+=5
@@ -131,7 +131,7 @@ window.onload = function() {
                 c.strokeStyle = "black"
                 c.stroke()
                 c.fill()            
-            } else if (event.key === 'ArrowLeft') {
+            } else if (event.key === 'ArrowLeft' || event.key === 'a') {
                 c.clearRect(xAxis1-3, yAxis1-3, 36, 36)         // Clears player box upon each keystroke
                 xAxis1-=5
                 xAxis2-=5
@@ -148,7 +148,7 @@ window.onload = function() {
                 c.strokeStyle = "black"
                 c.stroke()
                 c.fill()            
-            } else if (event.key === 'ArrowUp') {
+            } else if (event.key === 'ArrowUp' || event.key === 'w') {
                 c.clearRect(xAxis1-3, yAxis1-3, 36, 36)         // Clears player box upon each keystroke
                 yAxis1-=5
                 yAxis2-=5
@@ -188,9 +188,10 @@ window.onload = function() {
         }
         function didYouWinYetOnLevel1() {
             if (xAxis1 >= 650 && xAxis2 <= 750 && yAxis1 >=400 && yAxis2 <= 500) {
+                c.clearRect(0, 0, 800, 600)
                 alert('Congratulations! You Win, Sucka')
-                console.log(`Congrats on pasing ${level}`)
-                level++
+                console.log(`Congrats on passing ${level}`)
+                level = 2
                 console.log(`Good luck with level ${level}`)
             }  
         }
@@ -212,7 +213,7 @@ window.onload = function() {
     }
 
     function drawLevel2() {
-        makeStartingZoneLevel1()
+        makeStartingZoneLevel2()
         makeEndZoneLevel1()
         makeOuterRedBoundary()
         makePlayerLevel1()
@@ -234,9 +235,10 @@ window.onload = function() {
         resetPlayer()
     })
 
-    if ( level = 1 ) {
+    if ( level == 1 ) {
         drawLevel1()
-    } else if ( level = 2 ) {
+    }
+    if ( level == 2 ) {
         drawLevel2()
     }
 }
